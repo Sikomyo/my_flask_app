@@ -8,12 +8,12 @@ app = Flask(__name__)
 def main():
     return '''
      <form action="/echo_user_input" method="POST">
-         <input name="user_input">
+         <input name="user_name">
          <input type="submit" value="Submit!">
      </form>
      '''
 
 @app.route("/echo_user_input", methods=["POST"])
 def echo_input():
-    input_text = request.form.get("user_input", "")
-    return "You entered: " + input_text
+    input_text = request.form.get("user_name", "")
+    return "Your user name is: " + input_text
